@@ -13,6 +13,7 @@ import {
   TimelineContent,
   TimelineDot,
   TimelineOppositeContent,
+  timelineItemClasses,
 } from "@mui/lab";
 import SchoolIcon from "@mui/icons-material/School";
 import { eduData } from "@data/education";
@@ -35,7 +36,20 @@ export const Education = () => {
         Education
       </Typography>
 
-      <Timeline position={isMobile ? "right" : "alternate"}>
+      <Timeline
+        position={isMobile ? "right" : "alternate"}
+        sx={
+          isMobile
+            ? {
+                // Remove the left-side space that pushes content away from the line
+                [`& .${timelineItemClasses.root}:before`]: {
+                  flex: 0,
+                  padding: 0,
+                },
+              }
+            : {}
+        }
+      >
         {eduData.map((item, i) => (
           <TimelineItem key={i}>
             {!isMobile && (
@@ -59,7 +73,7 @@ export const Education = () => {
               <TimelineConnector />
             </TimelineSeparator>
 
-            <TimelineContent sx={{ py: "12px", px: 2 }}>
+            <TimelineContent sx={{ py: "12px", px: { xs: 1, sm: 2 } }}>
               <Box
                 sx={{
                   p: 3,
@@ -79,24 +93,30 @@ export const Education = () => {
                 {isMobile && (
                   <Typography
                     variant="caption"
-                    color="secondary.main"
+                    color={
+                      item.color === "primary"
+                        ? "primary.main"
+                        : "secondary.main"
+                    }
                     fontWeight={800}
+                    sx={{ mb: 0.5, display: "block" }}
                   >
                     {item.period}
                   </Typography>
                 )}
 
-                <Typography variant="h6" fontWeight={800} display="block">
+                <Typography variant="h6" fontWeight={800} lineHeight={1.2}>
                   {item.school}
                 </Typography>
                 <Typography
                   color="text.secondary"
                   variant="body2"
                   fontWeight={600}
+                  sx={{ mt: 0.5 }}
                 >
                   {item.degree}
                 </Typography>
-                <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
+                <Typography variant="body2" sx={{ mt: 1.5, opacity: 0.8 }}>
                   {item.details}
                 </Typography>
               </Box>

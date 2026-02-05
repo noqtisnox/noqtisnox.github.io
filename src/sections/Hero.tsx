@@ -3,40 +3,55 @@ import { Box, Typography, Container, Button } from "@mui/material";
 export const Hero = () => {
   return (
     <Container maxWidth="md">
-      <Box sx={{ py: 15, textAlign: "center" }}>
+      <Box sx={{ py: { xs: 10, md: 15 }, textAlign: "center" }}>
         <Typography
           variant="h1"
           gutterBottom
-          sx={{ fontSize: { xs: "3rem", md: "5rem" } }}
+          sx={{
+            fontSize: { xs: "3.5rem", md: "5rem" },
+            lineHeight: 1.2,
+          }}
         >
-          Hi, I'm{" "}
-          <Box component="span" color="primary.main">
+          Hi, I'm
+          <Box component="span" sx={{ whiteSpace: "nowrap" }}>
             <Typography
               variant="h1"
+              component="span"
               sx={{
+                fontSize: "inherit",
                 fontWeight: 900,
                 background: (theme) =>
                   `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                display: "inline-block", // Required for the gradient to wrap correctly
+                display: "inline-block",
+                verticalAlign: "bottom",
               }}
             >
               Nox
             </Typography>
+            .
           </Box>
-          .
         </Typography>
-        <Typography variant="h4" color="text.secondary" sx={{ mb: 4 }}>
+
+        <Typography
+          variant="h4"
+          color="text.secondary"
+          sx={{
+            mb: 4,
+            fontSize: { xs: "1.5rem", md: "2.125rem" },
+          }}
+        >
           React & TypeScript Developer
         </Typography>
+
         <Button
           variant="contained"
           size="large"
-          href="#projects-section" // Link to the ID we just created
+          href="#projects-section"
           sx={{
             borderRadius: 8,
-            px: 4,
+            px: { xs: 3, md: 4 },
             fontWeight: 700,
             background: (theme) =>
               `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,

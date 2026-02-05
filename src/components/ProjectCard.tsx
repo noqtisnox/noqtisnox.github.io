@@ -22,6 +22,7 @@ export const ProjectCard = ({ repo }: { repo: GitHubRepo }) => {
       sx={{
         p: 3,
         height: "100%",
+        width: "100%",
         borderRadius: 4,
         border: "1px solid",
         borderColor: "rgba(255, 255, 255, 0.1)",
