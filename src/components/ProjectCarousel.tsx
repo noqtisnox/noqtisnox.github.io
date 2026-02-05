@@ -12,7 +12,10 @@ export const ProjectCarousel = ({ projects }: { projects: GitHubRepo[] }) => {
   return (
     <Box sx={{ 
       py: 4,
-      '.swiper-button-next, .swiper-button-prev': { color: 'primary.main' },
+      '.swiper-button-next, .swiper-button-prev': { 
+        color: 'primary.main',
+        display: { xs: 'none', md: 'flex' } 
+      },
       '.swiper-pagination-bullet-active': { bgcolor: 'primary.main' }
     }}>
       <Swiper
@@ -26,7 +29,7 @@ export const ProjectCarousel = ({ projects }: { projects: GitHubRepo[] }) => {
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        style={{ paddingTop: 8, minHeight: '300px'}}
+        style={{ paddingTop: 8, minHeight: '300px' }}
       >
         {projects.map((repo) => (
           <SwiperSlide key={repo.id} style={{ height: 'auto' }}>
