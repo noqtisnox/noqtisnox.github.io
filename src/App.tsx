@@ -1,14 +1,21 @@
-import { useTheme } from "@mui/material/styles";
+import { ProjectCarousel } from '@components/ProjectCarousel';
+import useProjects from '@hooks/useProjects';
+import { Container, Typography, CircularProgress } from '@mui/material';
 
-function App() {
-  const theme = useTheme();
+export default function App() {
+  const { projects, loading } = useProjects('noqtisnox');
 
   return (
-    <main style={{ backgroundColor: theme.palette.primary.main }}>
-      <h1>Portfolio in Progress</h1>
-      <p>Building something cool with React + TS</p>
-    </main>
-  )
+    <Container sx={{ py: 8 }}>
+      <Typography variant="h3" fontWeight={800} gutterBottom>
+        Explore Works
+      </Typography>
+      
+      {loading ? (
+        <CircularProgress />
+      ) : (
+        <ProjectCarousel projects={projects} />
+      )}
+    </Container>
+  );
 }
-
-export default App
