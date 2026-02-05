@@ -33,7 +33,24 @@ export const Hero = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ borderRadius: 8, px: 4 }}
+          href="#projects-section" // Link to the ID we just created
+          sx={{
+            borderRadius: 8,
+            px: 4,
+            fontWeight: 700,
+            background: (theme) =>
+              `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+            boxShadow: (theme) =>
+              `0 4px 14px 0 ${theme.palette.primary.main}66`,
+            transition: "0.3s",
+            "&:hover": {
+              transform: "scale(1.05)",
+              boxShadow: (theme) =>
+                `0 6px 20px 0 ${theme.palette.primary.main}88`,
+              background: (theme) =>
+                `linear-gradient(45deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
+            },
+          }}
         >
           View My Work
         </Button>
