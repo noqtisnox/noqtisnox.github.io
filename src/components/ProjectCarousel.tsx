@@ -26,7 +26,7 @@ export const ProjectCarousel = ({ projects }: { projects: GitHubRepo[] }) => {
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        style={{ paddingTop: 4, minHeight: '300px'}}
+        style={{ paddingTop: 8, minHeight: '300px'}}
       >
         {projects.map((repo) => (
           <SwiperSlide key={repo.id} style={{ height: 'auto' }}>

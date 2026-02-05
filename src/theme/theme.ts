@@ -62,3 +62,5 @@ export const theme = createTheme({
     },
   },
 });
+
+export const brandGradient = "linear-gradient(135deg, #a855f7 0%, #3b82f6 100%)";
