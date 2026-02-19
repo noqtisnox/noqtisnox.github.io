@@ -13,8 +13,8 @@ export const ProjectCarousel = ({ projects }: { projects: GitHubRepo[] }) => {
     <Box sx={{ 
       py: { xs: 8, md: 4 }, 
       width: '100%',
-      maxWidth: '100vw', // Prevents horizontal overflow
-      overflow: 'hidden', // Kills the extra horizontal width
+      maxWidth: '100vw',
+      overflow: 'hidden',
       position: 'relative',
       '.swiper-button-next, .swiper-button-prev': { 
         color: 'primary.main',
@@ -27,21 +27,20 @@ export const ProjectCarousel = ({ projects }: { projects: GitHubRepo[] }) => {
       '.swiper': {
         overflow: 'visible',
         pb: 8, 
-        px: { xs: 2, md: 0 } // Gives a little "breathing room" on the sides
+        px: { xs: 2, md: 0 }
       }
     }}>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={16} // Tighter spacing for mobile
-        slidesPerView={1} // Default back to 1 for safety
+        spaceBetween={16}
+        slidesPerView={1}
         centeredSlides={true}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         breakpoints={{
-          // On mobile, show exactly one card but allow it to be centered
           320: {
-            slidesPerView: 1.05, // Very slight peek to avoid massive overflow
+            slidesPerView: 1.05,
             spaceBetween: 12
           },
           640: { 
