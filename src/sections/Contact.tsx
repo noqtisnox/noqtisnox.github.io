@@ -20,11 +20,7 @@ export const Contact = () => (
         Let's{" "}
         <Box 
           component="span" 
-          sx={{ 
-            background: (theme) => `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
+          sx={{ color: "primary.main" }}
         >
           Connect
         </Box>
@@ -51,7 +47,13 @@ export const Contact = () => (
             px: 6, 
             py: 2,
             fontWeight: 700,
-            boxShadow: (theme) => `0 10px 20px ${theme.palette.primary.main}33`
+            bgcolor: "primary.main",
+            color: "#2a2a2a",
+            boxShadow: "0 10px 20px rgba(122, 143, 166, 0.25)",
+            "&:hover": {
+              bgcolor: "primary.light",
+              boxShadow: "0 10px 28px rgba(122, 143, 166, 0.35)",
+            }
           }}
         >
           Email Me
@@ -68,7 +70,7 @@ export const Contact = () => (
                 height: 64, 
                 border: '1px solid', 
                 borderColor: 'divider',
-                '&:hover': { color: 'secondary.main', borderColor: 'secondary.main' }
+                '&:hover': { color: 'primary.main', borderColor: 'primary.main' }
               }}
             >
               <GitHubIcon fontSize="large" />
@@ -85,7 +87,7 @@ export const Contact = () => (
                 height: 64, 
                 border: '1px solid', 
                 borderColor: 'divider',
-                '&:hover': { color: 'secondary.main', borderColor: 'secondary.main' }
+                '&:hover': { color: 'primary.main', borderColor: 'primary.main' }
               }}
             >
               <LinkedInIcon fontSize="large" />

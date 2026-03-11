@@ -20,15 +20,12 @@ export const Hero = () => {
               sx={{
                 fontSize: "inherit",
                 fontWeight: 900,
-                background: (theme) =>
-                  `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                color: "primary.main",
                 display: "inline-block",
                 verticalAlign: "bottom",
               }}
             >
-              Nox
+              {" Nox"}
             </Typography>
             .
           </Box>
@@ -46,24 +43,21 @@ export const Hero = () => {
         </Typography>
 
         <Button
-          variant="contained"
+          variant="outlined"
           size="large"
           href="#projects-section"
           sx={{
             borderRadius: 8,
             px: { xs: 3, md: 4 },
             fontWeight: 700,
-            background: (theme) =>
-              `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-            boxShadow: (theme) =>
-              `0 4px 14px 0 ${theme.palette.primary.main}66`,
+            borderColor: "primary.main",
+            color: "primary.main",
             transition: "0.3s",
             "&:hover": {
+              bgcolor: "rgba(122, 143, 166, 0.1)",
+              borderColor: "primary.light",
+              color: "primary.light",
               transform: "scale(1.05)",
-              boxShadow: (theme) =>
-                `0 6px 20px 0 ${theme.palette.primary.main}88`,
-              background: (theme) =>
-                `linear-gradient(45deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
             },
           }}
         >

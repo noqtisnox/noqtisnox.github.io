@@ -36,7 +36,7 @@ export const Navbar = () => {
       position="sticky"
       elevation={0}
       sx={{
-        bgcolor: "rgba(15, 23, 42, 0.8)",
+        bgcolor: "rgba(42, 42, 42, 0.85)",
         backdropFilter: "blur(10px)",
         borderBottom: "1px solid",
         borderColor: "divider",
@@ -49,10 +49,8 @@ export const Navbar = () => {
             fontWeight={900}
             sx={{
               cursor: "pointer",
-              background: (theme) =>
-                `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              color: "primary.main",
+              letterSpacing: "0.05em",
             }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
@@ -74,7 +72,7 @@ export const Navbar = () => {
                   borderRadius: 2,
                   "&:hover": {
                     color: "primary.main",
-                    bgcolor: "rgba(168, 85, 247, 0.1)",
+                    bgcolor: "rgba(122, 143, 166, 0.1)",
                   },
                 }}
               >
@@ -102,7 +100,7 @@ export const Navbar = () => {
         PaperProps={{
           sx: {
             width: 250,
-            bgcolor: "rgba(15, 23, 42, 0.95)",
+            bgcolor: "rgba(42, 42, 42, 0.97)",
             backdropFilter: "blur(10px)",
             backgroundImage: "none",
           },
@@ -122,7 +120,7 @@ export const Navbar = () => {
                 sx={{
                   borderRadius: 2,
                   "&:hover": {
-                    bgcolor: "rgba(168, 85, 247, 0.1)",
+                    bgcolor: "rgba(122, 143, 166, 0.1)",
                     color: "primary.main",
                   },
                 }}

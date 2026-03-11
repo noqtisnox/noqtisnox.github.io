@@ -4,24 +4,24 @@ export const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#a855f7",
-      light: "#c084fc",
-      dark: "#7e22ce",
+      main: "#7a8fa6",
+      light: "#9aafc4",
+      dark: "#566a7d",
     },
     secondary: {
-      main: "#3b82f6",
-      light: "#60a5fa",
-      dark: "#1d4ed8",
+      main: "#888888",
+      light: "#aaaaaa",
+      dark: "#555555",
     },
     background: {
-      default: "#0f172a",
-      paper: "#1e293b",
+      default: "#2a2a2a",
+      paper: "#333333",
     },
     text: {
-      primary: "#f8fafc",
-      secondary: "#94a3b8",
+      primary: "#e0e0e0",
+      secondary: "#888888",
     },
-    divider: "rgba(148, 163, 184, 0.1)",
+    divider: "#444444",
   },
   typography: {
     fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
@@ -63,4 +63,4 @@ export const theme = createTheme({
   },
 });
 
-export const brandGradient = "linear-gradient(135deg, #a855f7 0%, #3b82f6 100%)";
+export const brandGradient = "linear-gradient(135deg, #7a8fa6 0%, #888888 100%)";

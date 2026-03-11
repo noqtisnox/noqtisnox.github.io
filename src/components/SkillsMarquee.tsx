@@ -67,7 +67,6 @@ export const SkillsMarquee = () => {
                 height: 80,
                 px: 2,
                 cursor: "pointer",
-                // THE HOVER EFFECT: Still here for desktop users!
                 "&:hover .skill-text": {
                   opacity: 0,
                   transform: "scale(0.8) translateY(-15px)",
@@ -101,13 +100,12 @@ export const SkillsMarquee = () => {
                 sx={{
                   width: { xs: 48, md: 64 },
                   height: { xs: 48, md: 64 },
-                  opacity: 0, // Hidden until hover
+                  opacity: 0,
                   transform: "scale(0.5) translateY(15px)",
                   transition:
                     "all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                   position: "absolute",
-                  filter: (theme) =>
-                    `drop-shadow(0 0 10px ${theme.palette.primary.main}44)`,
+                  filter: "drop-shadow(0 0 10px rgba(122, 143, 166, 0.4))",
                 }}
               />
             </Box>
@@ -115,7 +113,6 @@ export const SkillsMarquee = () => {
         </motion.div>
       </Box>
 
-      {/* CLICK OPTION: For the full grid view */}
       <Box sx={{ textAlign: "center", pb: 4 }}>
         <Button
           variant="text"
@@ -150,7 +147,7 @@ export const SkillsMarquee = () => {
                       borderRadius: "12px",
                       "&:hover": {
                         borderColor: "primary.main",
-                        bgcolor: "rgba(168, 85, 247, 0.05)",
+                        bgcolor: "rgba(122, 143, 166, 0.05)",
                       },
                     }}
                   />
