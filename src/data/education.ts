@@ -12,7 +12,7 @@ export const eduData: EducationItem[] = [
   {
     school: "Lviv Polytechnic National University",
     degree: "Computer Science / Smart Systems",
-    period: "2022 — Present",
+    period: "2024 — Present",
     details: "Focusing on Data Mining, Smart Technologies, and advanced web architecture.",
     color: "primary"
   },

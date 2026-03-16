@@ -6,7 +6,7 @@ import {
   Stack,
 } from "@mui/material";
 import { Navbar } from "@components/Navbar";
-import { ProjectCarousel } from "@components/ProjectCarousel";
+import { ProjectGrid } from "@/components/ProjectGrid";
 import { SkillsMarquee } from "@components/SkillsMarquee";
 
 import { Hero } from "@sections/Hero";
@@ -46,7 +46,7 @@ export default function App() {
                 <CircularProgress color="secondary" />
               </Box>
             ) : (
-              <ProjectCarousel projects={projects} />
+              <ProjectGrid projects={projects} />
             )}
           </Box>
 
