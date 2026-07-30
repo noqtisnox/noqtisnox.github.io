@@ -16,19 +16,9 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 const skills = [
   { name: "React", slug: "react" },
   { name: "TypeScript", slug: "ts" },
-  { name: "JavaScript", slug: "js" },
-  { name: "Node.js", slug: "nodejs" },
-  { name: "Sass", slug: "sass" },
-  { name: "TailwindCSS", slug: "tailwind" },
-  { name: "Express", slug: "express" },
-  { name: "PostgreSQL", slug: "postgres" },
-  { name: "Python", slug: "py" },
-  { name: "FastAPI", slug: "fastapi" },
-  { name: "Java", slug: "java" },
-  { name: "Kotlin", slug: "kotlin" },
-  { name: "C++", slug: "cpp" },
   { name: "Vite", slug: "vite" },
-  { name: "Firebase", slug: "firebase" },
+  { name: "Ruby", slug: "ruby" },
+  { name: "Rails", slug: "rails" },
 ];
 
 export const SkillsMarquee = () => {
@@ -48,7 +38,7 @@ export const SkillsMarquee = () => {
       <Box sx={{ position: "relative", py: { xs: 4, md: 8 } }}>
         <motion.div
           animate={{ x: [0, "-50%"] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           style={{
             display: "flex",
             gap: isMobile ? "80px" : "120px",

@@ -54,7 +54,7 @@ export const Navbar = () => {
             }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            NOQTISNOX
+            CherryNOX
           </Typography>
 
           <Stack

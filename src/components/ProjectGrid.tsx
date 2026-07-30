@@ -37,7 +37,6 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
   const [activeTopics, setActiveTopics] = useState<string[]>([]);
   const [showAll, setShowAll] = useState(false);
 
-  // Collect unique languages and topics across all projects
   const languages = useMemo(() => {
     const langs = projects
       .map((p) => p.language)
@@ -50,7 +49,6 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
     const topics = projects.flatMap((p) => p.topics ?? []);
     const counts: Record<string, number> = {};
     topics.forEach((t) => (counts[t] = (counts[t] ?? 0) + 1));
-    // Only show topics that appear in 2+ repos — avoids noise
     return Object.entries(counts)
       .filter(([, count]) => count >= 2)
       .sort((a, b) => b[1] - a[1])
@@ -59,7 +57,7 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
 
   const toggleTopic = (topic: string) => {
     setActiveTopics((prev) =>
-      prev.includes(topic) ? prev.filter((t) => t !== topic) : [...prev, topic]
+      prev.includes(topic) ? prev.filter((t) => t !== topic) : [...prev, topic],
     );
   };
 
@@ -85,7 +83,6 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
 
   return (
     <Box>
-      {/* ── Filter bar ── */}
       <Box
         sx={{
           mb: 4,
@@ -97,14 +94,18 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
           backdropFilter: "blur(8px)",
         }}
       >
-        {/* Languages */}
         {languages.length > 0 && (
           <Box sx={{ mb: allTopics.length > 0 ? 2 : 0 }}>
             <Typography
               variant="caption"
               color="text.disabled"
               fontWeight={700}
-              sx={{ letterSpacing: "0.1em", textTransform: "uppercase", display: "block", mb: 1 }}
+              sx={{
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                display: "block",
+                mb: 1,
+              }}
             >
               Language
             </Typography>
@@ -149,14 +150,18 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
           </Box>
         )}
 
-        {/* Topics */}
         {allTopics.length > 0 && (
           <Box>
             <Typography
               variant="caption"
               color="text.disabled"
               fontWeight={700}
-              sx={{ letterSpacing: "0.1em", textTransform: "uppercase", display: "block", mb: 1 }}
+              sx={{
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                display: "block",
+                mb: 1,
+              }}
             >
               Topics
             </Typography>
@@ -197,9 +202,15 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
           </Box>
         )}
 
-        {/* Clear filters */}
         <Collapse in={isFiltered}>
-          <Box sx={{ mt: 2, pt: 2, borderTop: "1px solid", borderColor: "divider" }}>
+          <Box
+            sx={{
+              mt: 2,
+              pt: 2,
+              borderTop: "1px solid",
+              borderColor: "divider",
+            }}
+          >
             <Stack direction="row" alignItems="center" spacing={2}>
               <Typography variant="body2" color="text.secondary">
                 <Box component="span" fontWeight={700} color="primary.main">
@@ -212,7 +223,12 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
                 variant="text"
                 color="secondary"
                 onClick={clearFilters}
-                sx={{ fontWeight: 700, textTransform: "none", p: 0, minWidth: 0 }}
+                sx={{
+                  fontWeight: 700,
+                  textTransform: "none",
+                  p: 0,
+                  minWidth: 0,
+                }}
               >
                 Clear filters ×
               </Button>
@@ -221,7 +237,6 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
         </Collapse>
       </Box>
 
-      {/* ── Grid ── */}
       <AnimatePresence mode="popLayout">
         {filtered.length === 0 ? (
           <MotionBox
@@ -268,7 +283,6 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
         )}
       </AnimatePresence>
 
-      {/* ── Show more ── */}
       {hasMore && !showAll && (
         <Box sx={{ textAlign: "center", mt: 5 }}>
           <Button

@@ -15,16 +15,32 @@ import { Contact } from "@sections/Contact";
 import useProjects from "@hooks/useProjects";
 
 export default function App() {
-  const { projects, loading } = useProjects("noqtisnox");
+  const { projects, loading } = useProjects("cherrynox");
 
   return (
     <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Navbar />
       <Hero />
 
-      <Box id="skills-section">
-        <SkillsMarquee />
-      </Box>
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Stack spacing={12}>
+          <Box>
+            <Typography
+              id="skills-section"
+              variant="h3"
+              fontWeight={900}
+              gutterBottom
+            >
+              My Day-to-Day{" "}
+              <Box component="span" color="primary.main">
+                Tools
+              </Box>
+            </Typography>
+
+            <SkillsMarquee />
+          </Box>
+        </Stack>
+      </Container>
 
       <Container maxWidth="lg" sx={{ py: 10 }}>
         <Stack spacing={12}>

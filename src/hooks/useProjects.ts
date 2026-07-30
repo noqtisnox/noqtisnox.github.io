@@ -11,7 +11,7 @@ export default function useProjects(username: string) {
       .then((data) => {
         const filtered = data.filter((repo: GitHubRepo) => {
           const isNotUsername = repo.name !== username;
-          const isNotSpecificRepo = repo.name !== "noqtisnox.github.io";
+          const isNotSpecificRepo = repo.name !== "cherrynox.github.io";
 
           const nameMatches = repo.name.toLowerCase().includes("educational");
 

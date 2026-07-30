@@ -1,4 +1,6 @@
-import { Box, Typography, Container, Button } from "@mui/material";
+import { Box, Typography, Container, Button, Avatar } from "@mui/material";
+
+import bannerUrl from "../assets/rem-welcome-banner.gif";
 
 export const Hero = () => {
   return (
@@ -18,6 +20,7 @@ export const Hero = () => {
               variant="h1"
               component="span"
               sx={{
+                marginLeft: 3,
                 fontSize: "inherit",
                 fontWeight: 900,
                 color: "primary.main",
@@ -25,30 +28,31 @@ export const Hero = () => {
                 verticalAlign: "bottom",
               }}
             >
-              {" Nox"}
+              {"Nox"}
             </Typography>
             .
           </Box>
         </Typography>
 
-        <Typography
-          variant="h4"
-          color="text.secondary"
+        <Avatar
+          src={bannerUrl}
+          alt="Rem"
           sx={{
-            mb: 4,
-            fontSize: { xs: "1.5rem", md: "2.125rem" },
+            width: 150,
+            height: 150,
+            margin: "0 auto",
           }}
-        >
-          React & TypeScript Developer
-        </Typography>
+          variant="rounded"
+        />
 
         <Button
           variant="outlined"
           size="large"
-          href="#projects-section"
+          href="#skills-section"
           sx={{
             borderRadius: 8,
             px: { xs: 3, md: 4 },
+            marginTop: 5,
             fontWeight: 700,
             borderColor: "primary.main",
             color: "primary.main",
@@ -61,7 +65,7 @@ export const Hero = () => {
             },
           }}
         >
-          View My Work
+          Let's Get Started
         </Button>
       </Box>
     </Container>
