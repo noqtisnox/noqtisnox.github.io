@@ -10,8 +10,8 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 import { SkillsMarquee } from "@components/SkillsMarquee";
 
 import { Hero } from "@sections/Hero";
-import { Education } from "@sections/Education";
-import { Contact } from "@sections/Contact";
+import Interests from "@/sections/Interests";
+import Footer from "@/sections/Footer";
 import useProjects from "@hooks/useProjects";
 
 export default function App() {
@@ -25,16 +25,8 @@ export default function App() {
       <Container maxWidth="lg" sx={{ py: 10 }}>
         <Stack spacing={12}>
           <Box>
-            <Typography
-              id="skills-section"
-              variant="h3"
-              fontWeight={900}
-              gutterBottom
-            >
-              My Day-to-Day{" "}
-              <Box component="span" color="primary.main">
-                Tools
-              </Box>
+            <Typography variant="h2" sx={{ mb: 4, textAlign: "center" }}>
+              My Day-to-Day Tools
             </Typography>
 
             <SkillsMarquee />
@@ -45,16 +37,8 @@ export default function App() {
       <Container maxWidth="lg" sx={{ py: 10 }}>
         <Stack spacing={12}>
           <Box>
-            <Typography
-              id="projects-section"
-              variant="h3"
-              fontWeight={900}
-              gutterBottom
-            >
-              Explore{" "}
-              <Box component="span" color="primary.main">
-                Works
-              </Box>
+            <Typography variant="h2" sx={{ mb: 4, textAlign: "center" }}>
+              Explore Projects
             </Typography>
 
             {loading ? (
@@ -66,14 +50,14 @@ export default function App() {
             )}
           </Box>
 
-          <Box id="education-section">
-            <Education />
+          <Box id="interests-section">
+            <Interests />
           </Box>
         </Stack>
       </Container>
 
-      <Box id="contact-section">
-        <Contact />
+      <Box id="footer-section">
+        <Footer />
       </Box>
     </Box>
   );

@@ -26,6 +26,7 @@ const LANGUAGE_COLORS: Record<string, string> = {
   CSS: "#563d7c",
   Rust: "#dea584",
   Go: "#00ADD8",
+  Ruby: "#701516",
 };
 
 interface ProjectGridProps {
@@ -120,6 +121,7 @@ export const ProjectGrid = ({ projects }: ProjectGridProps) => {
                     size="small"
                     onClick={() => setActiveLang(active ? null : lang)}
                     sx={{
+                      padding: 2,
                       fontWeight: 700,
                       fontSize: "0.75rem",
                       borderRadius: "8px",

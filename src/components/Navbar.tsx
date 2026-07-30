@@ -20,8 +20,7 @@ import CloseIcon from "@mui/icons-material/Close";
 const navItems = [
   { label: "Projects", href: "#projects-section" },
   { label: "Skills", href: "#skills-section" },
-  { label: "Education", href: "#education-section" },
-  { label: "Contact", href: "#contact-section" },
+  { label: "Interests", href: "#interests-section" },
 ];
 
 export const Navbar = () => {

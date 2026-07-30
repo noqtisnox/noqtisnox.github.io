@@ -1,6 +1,22 @@
-import { Box, Typography, Container, Button, Avatar } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Container,
+  Button,
+  Avatar,
+  keyframes,
+} from "@mui/material";
 
 import bannerUrl from "../assets/rem-welcome-banner.gif";
+
+const pulseGlow = keyframes`
+  0%, 100% {
+    box-shadow: 0 0 20px 6px rgba(122, 143, 166, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px 14px rgba(122, 143, 166, 0.7);
+  }
+`;
 
 export const Hero = () => {
   return (
@@ -41,6 +57,7 @@ export const Hero = () => {
             width: 150,
             height: 150,
             margin: "0 auto",
+            animation: `${pulseGlow} 2s ease-in-out infinite`,
           }}
           variant="rounded"
         />
