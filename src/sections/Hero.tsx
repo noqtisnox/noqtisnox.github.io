@@ -1,11 +1,4 @@
-import {
-  Box,
-  Typography,
-  Container,
-  Button,
-  Avatar,
-  keyframes,
-} from "@mui/material";
+import { Box, Typography, Container, Avatar, keyframes } from "@mui/material";
 
 import bannerUrl from "../assets/rem-welcome-banner.gif";
 
@@ -61,29 +54,6 @@ export const Hero = () => {
           }}
           variant="rounded"
         />
-
-        <Button
-          variant="outlined"
-          size="large"
-          href="#skills-section"
-          sx={{
-            borderRadius: 8,
-            px: { xs: 3, md: 4 },
-            marginTop: 5,
-            fontWeight: 700,
-            borderColor: "primary.main",
-            color: "primary.main",
-            transition: "0.3s",
-            "&:hover": {
-              bgcolor: "rgba(122, 143, 166, 0.1)",
-              borderColor: "primary.light",
-              color: "primary.light",
-              transform: "scale(1.05)",
-            },
-          }}
-        >
-          Let's Get Started
-        </Button>
       </Box>
     </Container>
   );
